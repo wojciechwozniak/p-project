@@ -54,7 +54,7 @@
                                 <label for="description"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Active') }}</label>
                                 <div class="col-md-6">
-                                    <input type="checkbox" id="is_active" value="{{$news->is_active}}" checked="{{$news->is_active ? : false}}" class="form-control{{ $errors->has('Active') ? ' is-invalid' : '' }}" name="isActive" />
+                                    <input type="checkbox" id="is_active" value="{{$news->is_active}}" checked="{{$news->is_active ? : false}}" class="form-control{{ $errors->has('Active') ? ' is-invalid' : '' }}" name="active" />
                                     @if ($errors->has('Active'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('Active') }}</strong>
@@ -65,7 +65,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Add') }}
+                                        {{ __('Update') }}
                                     </button>
                                 </div>
                             </div>

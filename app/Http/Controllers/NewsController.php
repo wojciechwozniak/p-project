@@ -115,7 +115,12 @@ class NewsController extends Controller
             $news->description = $data['description'];
             $news->is_active = (isset($data['active'])) ? $data['active'] : Config::get('CONSTANS.STATE.INACTIVE');
             if ($news->save()) {
-                return redirect()->route('news.show', ['id' => $id])->with('status', ['success', 'News updated!']);
+                if($news->is_active){
+                    return redirect()->route('news.show', ['id' => $id])->with('status', ['success', 'News updated!']);
+                }
+                else{
+                    return redirect()->route('home')->with('status', ['success', 'News updated!']);
+                }
             } else {
                 return redirect()->route('news.edit', ['id' => $id])->with('status', ['error', 'Something went wrong!']);
             }

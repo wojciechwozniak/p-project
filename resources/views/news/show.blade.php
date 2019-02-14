@@ -1,4 +1,3 @@
-{{$news}}
 @extends('layouts.app')
 
 @section('content')
